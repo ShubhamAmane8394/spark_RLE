@@ -4,11 +4,12 @@ import re
 import sys
 
 
-sc = spark_contexts().get_spark()
+sparkcontext = spark_contexts().get_spark_context()
 
 def rle_encoder(input, output):
+
     # Read the text file
-    input_file = sc.textFile("file://{}".format(input))
+    input_file = sparkcontext.textFile("file://{}".format(input))
 
     # Iterate through the each of the line and encode the line. Put this encoding logic into EncoderAlgoImplementation file
     read_file = input_file.map(lambda x: x if bool(re.search(r'\d', x)) == True else \
@@ -27,4 +28,4 @@ if __name__ == '__main__':
     output = sys.argv[2]
     print(input,"\n",output)
     rle_encoder(input, output)
-    sc.stop()
+    sparkcontext.stop()
