@@ -35,9 +35,10 @@ def rle_encoder(input, output):
     # check for the diff in sizes of original data and latest encoded data
 
     if input_file_size > output_file_size:
-        print(True)
+        print(True,"\n\n\n")
     else:
-        read_file.coalesce(1).saveAsTextFile("file:///{}".format(output))
+        print(False,"\n\n\n")
+        # read_file.coalesce(1).saveAsTextFile("file:///{}".format(output))
 
     # If both are same discard it, else write the encoded data to to output folder
 
