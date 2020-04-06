@@ -25,6 +25,6 @@ def rle_encoder(input, output):
 if __name__ == '__main__':
     input = sys.argv[0]
     output = sys.argv[1]
-
-    rle_encoder(input, output)
+    print(input,"\n",output)
+    # rle_encoder(input, output)
     sc.stop()
