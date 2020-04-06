@@ -34,7 +34,7 @@ def rle_encoder(input, output):
     print(output_file_size)
     # check for the diff in sizes of original data and latest encoded data
 
-    if input_file_size > output_file_size:
+    if int(input_file_size) >= int(output_file_size):
         print(True,"\n\n\n")
     else:
         print(False,"\n\n\n")
