@@ -36,6 +36,7 @@ def rle_encoder(input, output):
 
     if int(input_file_size) >= int(output_file_size):
         print(True,"\n\n\n")
+        read_file.coalesce(1).saveAsTextFile("file:///{}".format(output))
     else:
         print(False,"\n\n\n")
         # read_file.coalesce(1).saveAsTextFile("file:///{}".format(output))
